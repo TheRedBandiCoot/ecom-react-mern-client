@@ -1,6 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react';
 import AdminSidebar from '../../../components/admin/AdminSidebar';
-import toast from 'react-hot-toast';
 
 const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 const allNumbers = '1234567890';
