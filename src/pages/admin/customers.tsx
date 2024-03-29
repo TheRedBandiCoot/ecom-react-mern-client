@@ -160,7 +160,11 @@ const Customers = () => {
       <AdminSidebar />
       <main>
         {value && <>{Modal}</>}
-        {isLoading ? <Skeleton length={3} /> : Table}
+        {isLoading ? (
+          <Skeleton length={10} marginTop="2rem" width="98%" />
+        ) : (
+          Table
+        )}
       </main>
     </div>
   );

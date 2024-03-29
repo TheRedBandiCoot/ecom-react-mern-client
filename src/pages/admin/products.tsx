@@ -69,7 +69,7 @@ const Products = () => {
   if (isError) toast.error((error as CustomError).data.message);
 
   useEffect(() => {
-    console.log(isProductRefetch);
+    // console.log(isProductRefetch);
 
     if (isProductRefetch) refetch();
     dispatch(refetchProduct({ isProductRefetch: false }));
@@ -105,7 +105,13 @@ const Products = () => {
     <div className="admin-container">
       <AdminSidebar />
 
-      <main>{isLoading ? <Skeleton length={3} /> : Table}</main>
+      <main>
+        {isLoading ? (
+          <Skeleton length={10} marginTop="2rem" width="98%" />
+        ) : (
+          Table
+        )}
+      </main>
 
       {!isLoading && (
         <Link to="/admin/product/new" className="create-product-btn">

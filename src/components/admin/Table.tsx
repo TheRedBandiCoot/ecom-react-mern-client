@@ -42,7 +42,7 @@ export function Table<T extends Object, K extends ColumnDef<any, any>[]>(
     });
 
     return (
-      <div className={`dashboard-product-box`}>
+      <div className={`dashboard-product-box ${heading || ''}`}>
         <h2 className={`heading`}>{heading}</h2>
         <table className="table">
           <thead>

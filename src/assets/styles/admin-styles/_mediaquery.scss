@@ -29,7 +29,12 @@
     grid-template-columns: 1fr !important;
   }
 }
-
+@media screen and (width<= 875px) {
+  #coupon-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
 @media screen and (width<= 768px) {
   .cart {
     display: block;

@@ -100,7 +100,13 @@ const Transaction = () => {
   return (
     <div className="admin-container">
       <AdminSidebar />
-      <main>{isLoading ? <Skeleton length={3} /> : Table}</main>
+      <main>
+        {isLoading ? (
+          <Skeleton length={10} marginTop="2rem" width="98%" />
+        ) : (
+          Table
+        )}
+      </main>
     </div>
   );
 };

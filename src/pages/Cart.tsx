@@ -121,7 +121,7 @@ const Cart = () => {
           />
 
           {isLoading ? (
-            <Loader textAlign="center" />
+            <Loader textAlign="center" clsName="loader-cart" />
           ) : couponCode && isValidCouponCode ? (
             <span className="green">
               {INRCurrency.format(discount)} off using the{' '}

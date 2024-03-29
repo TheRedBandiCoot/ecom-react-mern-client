@@ -7,6 +7,7 @@ import { cartReducer } from './reducer/cartReducer';
 // import { setupListeners } from '@reduxjs/toolkit/query';
 import { orderAPI } from './api/orderAPI';
 import { dashboardAPI } from './api/dashboardAPI';
+import { couponAPI } from './api/couponAPI';
 
 export const server = import.meta.env.VITE_SERVER;
 export const store = configureStore({
@@ -15,6 +16,7 @@ export const store = configureStore({
     [productAPI.reducerPath]: productAPI.reducer,
     [orderAPI.reducerPath]: orderAPI.reducer,
     [dashboardAPI.reducerPath]: dashboardAPI.reducer,
+    [couponAPI.reducerPath]: couponAPI.reducer,
     [userReducer.name]: userReducer.reducer,
     [modalReducer.name]: modalReducer.reducer,
     [cartReducer.name]: cartReducer.reducer
@@ -24,7 +26,8 @@ export const store = configureStore({
       userAPI.middleware,
       productAPI.middleware,
       orderAPI.middleware,
-      dashboardAPI.middleware
+      dashboardAPI.middleware,
+      couponAPI.middleware
     )
 });
 

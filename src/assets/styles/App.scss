@@ -356,6 +356,15 @@ body {
     border-bottom: 1rem solid #fff;
     animation: loading-animation 0.5s linear infinite;
   }
+  &.loader-cart {
+    > div {
+      @include square(0.5rem);
+      border-top: 0.1rem solid rgb(43, 43, 43);
+      border-left: 0.1rem solid rgb(43, 43, 43);
+      border-right: 0.1rem solid #fff;
+      border-bottom: 0.1rem solid #fff;
+    }
+  }
 }
 
 .skeleton-loader {
@@ -392,5 +401,76 @@ body {
   }
   100% {
     opacity: 0.6;
+  }
+}
+
+section#coupon-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  > .coupon-main {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    .coupon-input {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
+      border: 1px solid black;
+    }
+
+    .coupon-input::-webkit-inner-spin-button {
+      display: none;
+    }
+    .coupon-amount-form > .coupon-btn {
+      width: 100%;
+      padding: 1rem 0.5rem;
+      outline: none;
+      background-color: rgba(0, 115, 255);
+      color: rgba(255, 255, 255);
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      &:disabled {
+        background-color: rgba(62, 62, 62, 0.198);
+        color: rgba(255, 255, 255, 0.582);
+        user-select: none;
+        cursor: not-allowed;
+      }
+    }
+
+    code {
+      position: relative;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      border: 1px solid black;
+      padding: 0.5rem 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      &:hover > span {
+        opacity: 1;
+      }
+
+      > span {
+        opacity: 0;
+        @include square(100%);
+        top: 0;
+        left: 0;
+        position: absolute;
+        border-radius: 5px;
+        background-color: rgb(15, 15, 15);
+        color: white;
+        font-size: 0.8rem;
+        @include flex;
+      }
+    }
   }
 }

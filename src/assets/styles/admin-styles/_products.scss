@@ -1,8 +1,11 @@
 .dashboard-product-box {
   background-color: white;
   padding: 2rem;
-  overflow: auto;
+  // overflow: auto;
   @include square(100%);
+}
+.dashboard-product-box.coupon {
+  padding: 0;
 }
 
 .create-product-btn {

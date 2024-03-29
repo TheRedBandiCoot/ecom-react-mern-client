@@ -4,11 +4,20 @@ type TextAlign = 'center' | 'unset';
 
 type LoaderType = {
   textAlign?: TextAlign;
+  fontSize?: string;
+  clsName?: string;
 };
 
-const Loader = ({ textAlign = 'unset' }: LoaderType) => {
+const Loader = ({
+  textAlign = 'unset',
+  fontSize = '1rem',
+  clsName
+}: LoaderType) => {
   return (
-    <section style={{ textAlign, fontSize: '1rem' }} className="loader">
+    <section
+      style={{ textAlign, fontSize }}
+      className={`loader ${clsName || ''}`}
+    >
       <div></div>
     </section>
   );
@@ -20,6 +29,7 @@ interface SkeletonProps {
   height?: string;
   children?: ReactElement;
   bgColor?: string;
+  marginTop?: string;
 }
 
 export const Skeleton = ({
@@ -27,7 +37,8 @@ export const Skeleton = ({
   height,
   length = 3,
   children,
-  bgColor
+  bgColor,
+  marginTop = '1rem'
 }: SkeletonProps) => {
   const skeletonShapes = Array.from({ length }, (_, idx) => (
     <div
@@ -39,7 +50,7 @@ export const Skeleton = ({
     </div>
   ));
   return (
-    <div className="skeleton-loader" style={{ width }}>
+    <div className="skeleton-loader" style={{ width, marginTop }}>
       {skeletonShapes}
     </div>
   );

@@ -119,3 +119,27 @@ export type LineResponse = {
   success: boolean;
   charts: Line;
 };
+
+export type CouponRequestBody = {
+  id: string;
+  body: {
+    coupon: string;
+    amount: number;
+  };
+};
+
+type CouponType = {
+  _id: string;
+  code: string;
+  amount: number;
+};
+
+export type GetALLCouponsResponse = {
+  success: boolean;
+  coupons: CouponType[];
+};
+
+export type CouponDeleteRequest = {
+  userId: string;
+  couponId: string;
+};
