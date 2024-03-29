@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
 import toast from 'react-hot-toast';
 import { CustomError } from '../../../types/types';
-import Loader, { Skeleton } from '../../../components/Loader';
+import Loader from '../../../components/Loader';
 import { responseToast } from '../../../utils/features';
 import { useNavigate } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
