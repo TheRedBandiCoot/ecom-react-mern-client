@@ -1,7 +1,6 @@
 import { FaTrash } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { INRCurrency } from '../utils/INRCurrency';
-import { server } from '../redux/store';
 import { CartItem } from '../types/types';
 
 interface CartItemsProps {
