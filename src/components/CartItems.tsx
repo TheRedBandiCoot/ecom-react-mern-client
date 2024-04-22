@@ -19,7 +19,7 @@ function CartItems({
   const { name, photo, price, productID, quantity } = cartItem;
   return (
     <div className="cart-item">
-      <img src={`${server}/${photo}`} alt={name} />
+      <img src={photo} alt={name} />
       <article>
         <NavLink to={`product/${productID}`}>{name}</NavLink>
         <span>{INRCurrency.format(price)}</span>
