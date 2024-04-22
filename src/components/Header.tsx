@@ -81,6 +81,7 @@ const Header = ({ user }: HeaderProps) => {
             <button onClick={() => setIsOpen(!isOpen)}>
               <img
                 className="user-profile-img"
+                referrerPolicy="no-referrer"
                 src={
                   user.photo == null || user.photo.length < 1
                     ? user.gender === 'male'

@@ -12,7 +12,7 @@ import {
   useUpdateProductMutation
 } from '../../../redux/api/productAPI';
 import { openBtn } from '../../../redux/reducer/modalReducer';
-import { RootState, server } from '../../../redux/store';
+import { RootState } from '../../../redux/store';
 import { CustomError } from '../../../types/types';
 import { responseToast } from '../../../utils/features';
 
@@ -98,7 +98,7 @@ const Productmanagement = () => {
       setStockUpdate(data.product.stock);
       setNameUpdate(data.product.name);
       setCategoryUpdate(data.product.category);
-      setPhotoUpdate(`${server}/${data.product.photo}`);
+      setPhotoUpdate(data.product.photo);
     }
   }, [data]);
 
@@ -131,7 +131,7 @@ const Productmanagement = () => {
           <>
             <section>
               <strong>ID - {data?.product._id}</strong>
-              <img src={`${server}/${photo}`} alt={name} />
+              <img src={photo} alt={name} />
               <p>{name}</p>
               {stock > 0 ? (
                 <span className="green">{stock} Available</span>

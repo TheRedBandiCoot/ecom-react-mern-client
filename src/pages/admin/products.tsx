@@ -8,7 +8,7 @@ import { Skeleton } from '../../components/Loader';
 import AdminSidebar from '../../components/admin/AdminSidebar';
 import { Table as TanstackTable } from '../../components/admin/Table';
 import { useAllProductsQuery } from '../../redux/api/productAPI';
-import { RootState, server } from '../../redux/store';
+import { RootState } from '../../redux/store';
 import { CustomError } from '../../types/types';
 import { refetchProduct } from '../../redux/reducer/cartReducer';
 
@@ -77,11 +77,7 @@ const Products = () => {
       setData(
         productsData.products.map(product => ({
           photo: (
-            <img
-              src={`${server}/${product.photo}`}
-              className="img-table"
-              alt={product.name}
-            />
+            <img src={product.photo} className="img-table" alt={product.name} />
           ),
           name: product.name,
           price: product.price,
