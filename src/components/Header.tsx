@@ -52,7 +52,7 @@ const Header = ({ user }: HeaderProps) => {
           onClick={() => setIsOpen(false)}
           to="/"
         >
-          HOMEY
+          HOME
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? 'search active' : '')}
