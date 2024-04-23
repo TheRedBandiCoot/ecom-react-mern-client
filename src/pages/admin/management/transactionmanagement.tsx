@@ -11,7 +11,7 @@ import {
   useUpdateOrderMutation
 } from '../../../redux/api/orderAPI';
 import { openBtn } from '../../../redux/reducer/modalReducer';
-import { RootState, server } from '../../../redux/store';
+import { RootState } from '../../../redux/store';
 import { CustomError, Order, OrderItem } from '../../../types/types';
 import { responseToast } from '../../../utils/features';
 import { refetchOrder } from '../../../redux/reducer/cartReducer';
@@ -123,7 +123,7 @@ const TransactionManagement = () => {
                 <ProductCard
                   key={i._id}
                   name={i.name}
-                  photo={`${server}/${i.photo}`}
+                  photo={i.photo}
                   productID={i.productID}
                   _id={i._id}
                   quantity={i.quantity}
